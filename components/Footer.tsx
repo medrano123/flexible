@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { footerLinks } from "@/constants"
-import { ColumnProps } from "../../common.types"
+import { ColumnProps } from "../common.types"
 
 const FooterColumn = ({ title, links}: ColumnProps) => (
 	<div className="flex-1 flex flex-col gap-3 text-sm min-w-max">
