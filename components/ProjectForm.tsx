@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 
 import { FormState, ProjectInterface, SessionInterface } from '@/common.types';
 import { FormField, CustomMenu, Button } from './'
-import { createNewProject, fetchToken  } from '@/lib/actions';
+import { updateProject, createNewProject, fetchToken } from '@/lib/actions';
 
 import { categoryFilters } from '@/constants';
 
@@ -46,7 +46,11 @@ const ProjectForm = ({ type, session, project }: Props) => {
                 router.push("/")
             }
             
- 
+            if (type === "edit") {
+                await updateProject(form, project?.id as string, token)
+
+                router.push("/")
+            }
 
         } catch (error) {
             alert(`Failed to ${type === "create" ? "create" : "edit"} a project. Try again!`);
@@ -144,8 +148,8 @@ const ProjectForm = ({ type, session, project }: Props) => {
             />
             <div className='flexStart w-full'>
                 <Button
-                    // title={submitting ? `${type === "create" ? "Creating" : "Editing"}` : `${type === "create" ? "Create" : "Edit"}`}
-                    title="Create"
+                    title={submitting ? `${type === "create" ? "Creating" : "Editing"}` : `${type === "create" ? "Create" : "Edit"}`}
+                    // title="Create"
                     type="submit"
                     leftIcon={submitting ? "" : "/plus.svg"}
                     submitting={submitting}

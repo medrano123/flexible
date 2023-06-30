@@ -99,7 +99,7 @@ export const getProjectByIdQuery = `
 			name
 			email
 			avatarUrl
-		}
+			}
 		}
 	}
 `;

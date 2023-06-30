@@ -8,6 +8,11 @@ import ProjectForm from './ProjectForm';
 import FormField from './FormField';
 import CustomMenu from './CustomMenu';
 import ProjectCard from './ProjectCard';
+import RelatedProjects from './RelatedProjects';
+import ProjectActions from './ProjectActions';
+import Categories from './Categories';
+import LoadMore from './LoadMore';
+
 export {
     Navbar,
     Footer,
@@ -19,4 +24,8 @@ export {
     FormField,
     CustomMenu,
     ProjectCard,
+    RelatedProjects,
+    ProjectActions,
+    Categories,
+    LoadMore,
 }
